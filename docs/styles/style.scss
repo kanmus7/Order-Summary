@@ -126,7 +126,7 @@ p{
 }
 .summary-data__plan{
     @include displayFlex;
-    background: $PaleBlue;
+    background: $VeryPaleBlue;
     border-radius: 10px;
     @include width(340px);
     @include height(95px);
