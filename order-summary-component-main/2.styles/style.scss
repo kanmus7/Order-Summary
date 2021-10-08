@@ -1,0 +1,217 @@
+$PaleBlue: hsl(225, 100%, 94%);
+$BrightBlue: hsl(245, 75%, 52%);
+$VeryPaleBlue: hsl(225, 100%, 98%);
+$DesaturatedBlue: hsl(224, 23%, 55%);
+$DarkBlue: hsl(223, 47%, 23%); 
+$white : white;
+
+@mixin displayFlex { 
+    display: flex;
+}
+
+@mixin height ($height) { 
+    height: $height;
+}
+
+@mixin width ($width) { 
+    width: $width;
+}
+
+@mixin fontWeight ($fontWeight) { 
+    font-weight: $fontWeight;
+}
+
+@mixin alingItems ($alingItems) { 
+    align-items: $alingItems;
+}
+
+@mixin background-color ($backgroundcolor) { 
+    background-color: $backgroundcolor;
+}
+
+@mixin padding ($padding) { 
+    padding: $padding;
+}
+
+@mixin fontSize ($fontSize) { 
+    font-size: $fontSize;
+}
+
+@mixin flexDirection ($flexDirection) { 
+    flex-direction: $flexDirection;
+}
+
+@mixin margin ($margin) { 
+    margin: $margin;
+}
+
+* {
+    box-sizing: border-box;
+} 
+
+html, body {
+    @include height(100%);
+    @include margin(0);
+    @include padding(0);  
+    @include background-color($PaleBlue);
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain; 
+}
+
+body{
+    font-family: 'Red Hat Display', sans-serif;
+    @include displayFlex;
+    justify-content: center;
+    @include alingItems(center);
+}
+
+.summary{
+    @include displayFlex;
+    @include flexDirection(column);
+    @include alingItems(center);
+    @include background-color($white);
+    @include width(500px);
+    @include height(750px); 
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 10px 8px -9px $BrightBlue;
+}
+
+.img{
+    @include width(100%);
+}
+
+.img img{
+    @include width(100%);
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.summary-data{
+    @include displayFlex;
+    @include flexDirection(column);
+    @include alingItems(center);
+    justify-content: space-between;
+}
+
+.sumary-data__order{
+    @include displayFlex;
+    @include flexDirection(column);
+    margin-top: 1rem;
+}
+
+.sumary-data__order__title{
+    text-align: center;
+    @include fontSize(25px);
+    @include fontWeight(900);
+    margin-bottom: 15px;
+}
+
+h1{
+    color: $DarkBlue;
+}
+
+.sumary-data__order__txt{
+    @include fontSize(16px);   
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 0;
+    @include width(366px);
+}
+
+p{
+    color: $DesaturatedBlue;
+}
+.summary-data__plan{
+    @include displayFlex;
+    background: $PaleBlue;
+    border-radius: 10px;
+    @include width(340px);
+    @include height(95px);
+    @include padding(20px);
+    justify-content: space-between;
+}
+
+.summary-data__plan__items{
+    @include displayFlex;
+    @include alingItems(center);    
+}
+
+.summary-data__plan__items__plan{
+    padding-left: 20px;
+}
+h3{
+    color: $DarkBlue;
+    @include fontSize(20px);
+    @include fontWeight(900);
+    margin-bottom: 0;
+}
+.price{
+    margin-top: 5px;
+}
+
+.summary-data__plan__change{
+    @include displayFlex;
+    @include alingItems(center);
+}
+
+a{
+    color: $BrightBlue;
+    @include fontWeight(800);
+}
+
+a:hover{
+    text-decoration: none;
+    color: hsl(245, 73%, 61%);
+}
+
+.summary-data__payment{
+    @include displayFlex;
+    @include flexDirection(column);
+    @include alingItems(center);
+    padding-top: 40px;
+}
+
+.summary-data__payment__btn{
+    @include background-color($BrightBlue);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    @include fontWeight(bold);
+    @include fontSize(15px);
+    @include padding(15px 98px);
+    @include height(50px);
+    border: none;
+    box-shadow: 0px 10px 8px -9px $BrightBlue;
+}
+
+button:hover{
+    @include background-color(hsl(245, 73%, 61%));
+}
+
+.summary-data__payment__cancel{
+    @include fontWeight(900);
+    @include fontSize(15px);
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.summary-data__payment__cancel:hover{
+    color: $DarkBlue;
+}
+
+@media only screen and (max-width:600px) {
+    .body{
+        @include background-color($PaleBlue);
+        @include width(100%);           
+    }
+    .summary{
+        @include width(380px);
+        @include height(620px);     
+    }
+    .summary-data__payment__cancel{
+        margin-top: 20px;
+    }
+   }
