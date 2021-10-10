@@ -49,8 +49,8 @@ $white : white;
     box-sizing: border-box;
 } 
 
-html, body {
-    @include height(100%);
+html, body { 
+    min-height: 100vh;
     @include margin(0);
     @include padding(0);  
     @include background-color($PaleBlue);
@@ -71,8 +71,10 @@ body{
     @include flexDirection(column);
     @include alingItems(center);
     @include background-color($white);
-    @include width(500px);
-    @include height(750px); 
+    @include width(100%);
+    max-width: 450px;
+    @include height(100%);
+    max-height: 750px; 
     border-radius: 20px;
     border: none;
     box-shadow: 0px 10px 8px -9px $BrightBlue;
@@ -118,7 +120,8 @@ h1{
     margin-left: 2rem;
     margin-right: 2rem;
     margin-top: 0;
-    @include width(366px);
+    @include width(100%);
+    max-width: 366px;
 }
 
 p{
@@ -142,7 +145,8 @@ p{
 .summary-data__plan__items__plan{
     padding-left: 20px;
 }
-h3{
+
+.plan{
     color: $DarkBlue;
     @include fontSize(20px);
     @include fontWeight(900);
@@ -194,8 +198,11 @@ button:hover{
 .summary-data__payment__cancel{
     @include fontWeight(900);
     @include fontSize(15px);
-    margin-top: 40px;
+    margin-top: 30px;
     cursor: pointer;
+    color: $DesaturatedBlue;
+    text-decoration: none;
+    padding-bottom: 30px;
 }
 
 .summary-data__payment__cancel:hover{
@@ -210,6 +217,10 @@ button:hover{
     .summary{
         @include width(380px);
         @include height(620px);     
+    }
+    .sumary-data__order__txt{
+        margin-left: 0;
+        margin-right: 0;
     }
     .summary-data__payment__cancel{
         margin-top: 20px;
